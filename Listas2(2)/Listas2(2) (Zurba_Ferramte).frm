@@ -1,117 +1,270 @@
 VERSION 5.00
 Begin VB.Form Form1 
+   BackColor       =   &H8000000D&
    Caption         =   "Form1"
-   ClientHeight    =   3090
+   ClientHeight    =   9810
    ClientLeft      =   60
    ClientTop       =   450
-   ClientWidth     =   4680
+   ClientWidth     =   19725
    LinkTopic       =   "Form1"
-   ScaleHeight     =   13290
-   ScaleWidth      =   25080
+   ScaleHeight     =   9810
+   ScaleWidth      =   19725
    StartUpPosition =   3  'Windows Default
-   Begin VB.TextBox Text1 
+   WindowState     =   2  'Maximized
+   Begin VB.TextBox Text2 
       Height          =   735
       Index           =   4
-      Left            =   7680
-      TabIndex        =   6
-      Text            =   "Text1"
-      Top             =   6480
-      Width           =   1575
+      Left            =   480
+      TabIndex        =   18
+      Top             =   5160
+      Width           =   1935
    End
-   Begin VB.TextBox Text1 
+   Begin VB.TextBox Text2 
       Height          =   735
       Index           =   3
-      Left            =   7680
-      TabIndex        =   5
-      Text            =   "Text1"
-      Top             =   3960
-      Width           =   1575
+      Left            =   480
+      TabIndex        =   17
+      Top             =   6000
+      Width           =   1935
    End
-   Begin VB.TextBox Text1 
+   Begin VB.TextBox Text2 
       Height          =   735
       Index           =   2
-      Left            =   7680
-      TabIndex        =   4
-      Text            =   "Text1"
-      Top             =   4800
-      Width           =   1575
+      Left            =   480
+      TabIndex        =   16
+      Top             =   6840
+      Width           =   1935
    End
-   Begin VB.TextBox Text1 
+   Begin VB.TextBox Text2 
       Height          =   735
       Index           =   1
-      Left            =   7680
-      TabIndex        =   3
-      Text            =   "Text1"
-      Top             =   5640
-      Width           =   1575
+      Left            =   480
+      TabIndex        =   15
+      Top             =   7680
+      Width           =   1935
    End
-   Begin VB.TextBox Text1 
+   Begin VB.TextBox Text2 
       Height          =   735
       Index           =   0
-      Left            =   7680
+      Left            =   480
+      TabIndex        =   14
+      Top             =   4320
+      Width           =   1935
+   End
+   Begin VB.CommandButton Command2 
+      Caption         =   "Calcular Promedio"
+      Height          =   735
+      Left            =   6720
+      TabIndex        =   12
+      Top             =   2400
+      Width           =   1335
+   End
+   Begin VB.TextBox Text1 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Index           =   4
+      Left            =   3240
+      TabIndex        =   6
+      Top             =   3000
+      Width           =   735
+   End
+   Begin VB.TextBox Text1 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Index           =   3
+      Left            =   3240
+      TabIndex        =   5
+      Top             =   2280
+      Width           =   735
+   End
+   Begin VB.TextBox Text1 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Index           =   2
+      Left            =   3240
+      TabIndex        =   4
+      Top             =   1560
+      Width           =   735
+   End
+   Begin VB.TextBox Text1 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Index           =   1
+      Left            =   3240
+      TabIndex        =   3
+      Top             =   840
+      Width           =   735
+   End
+   Begin VB.TextBox Text1 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   615
+      Index           =   0
+      Left            =   3240
       TabIndex        =   2
-      Text            =   "Text1"
-      Top             =   3120
-      Width           =   1575
+      Top             =   120
+      Width           =   735
    End
    Begin VB.ListBox List1 
-      Height          =   2205
-      Left            =   9480
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1860
+      ItemData        =   "Listas2(2) (Zurba_Ferramte).frx":0000
+      Left            =   4440
+      List            =   "Listas2(2) (Zurba_Ferramte).frx":0002
       TabIndex        =   1
-      Top             =   3240
-      Width           =   3855
+      Top             =   240
+      Width           =   6495
    End
    Begin VB.CommandButton Command1 
-      Caption         =   "Command1"
+      Caption         =   "Dar notas"
       Height          =   735
-      Left            =   10800
+      Left            =   4800
       TabIndex        =   0
-      Top             =   6360
+      Top             =   2400
       Width           =   1455
    End
-   Begin VB.Label Label1 
-      Caption         =   "Label1"
+   Begin VB.Label Label2 
       Height          =   975
+      Left            =   11160
+      TabIndex        =   13
+      Top             =   240
+      Width           =   3015
+   End
+   Begin VB.Label Label1 
+      Caption         =   "Historia"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   18
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
       Index           =   4
-      Left            =   4440
+      Left            =   240
       TabIndex        =   11
-      Top             =   2640
+      Top             =   2520
       Width           =   2775
    End
    Begin VB.Label Label1 
-      Caption         =   "Label1"
-      Height          =   975
+      Caption         =   "C.ciudadana"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   18
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
       Index           =   3
-      Left            =   4440
+      Left            =   240
       TabIndex        =   10
-      Top             =   4800
+      Top             =   1920
       Width           =   2775
    End
    Begin VB.Label Label1 
-      Caption         =   "Label1"
-      Height          =   975
+      Caption         =   "Lengua"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   18
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
       Index           =   2
-      Left            =   4440
+      Left            =   240
       TabIndex        =   9
-      Top             =   5880
+      Top             =   1320
       Width           =   2775
    End
    Begin VB.Label Label1 
-      Caption         =   "Label1"
-      Height          =   975
+      Caption         =   "Matematicas"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   18
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
       Index           =   1
-      Left            =   4560
+      Left            =   240
       TabIndex        =   8
-      Top             =   7080
+      Top             =   720
       Width           =   2775
    End
    Begin VB.Label Label1 
-      Caption         =   "Label1"
-      Height          =   975
+      Caption         =   "Geografia"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   18
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
       Index           =   0
-      Left            =   4440
+      Left            =   240
       TabIndex        =   7
-      Top             =   3720
+      Top             =   120
       Width           =   2775
    End
 End
@@ -121,9 +274,11 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
+Dim notaMayor, notaMenor, suma As Integer
+Dim promedio As Double
 Dim A As Integer
 Private Sub Command1_Click()
-
+'------------------Dar notas-------------------
 If List1.ListCount < 5 Then
 
     For A = 0 To 4
@@ -132,15 +287,52 @@ If List1.ListCount < 5 Then
             
             List1.AddItem "Escribiste mal la nota"
             
+        ElseIf Text1(A).Text = "" Then
+            
+            List1.AddItem "escribi algo bobo"
+            
         Else
             
             List1.AddItem Label1(A).Caption & ": " & Text1(A).Text
-            
+               
         End If
+        
+    
         
     Next A
 
 End If
+       
+
+End Sub
+Private Sub Command2_Click()
+'-------------------------Calcular el promedio-----------------------
+    notaMayor = Text1(0).Text
+    notaMenor = Text1(0).Text
+
+    For A = 0 To 4
+    
+        suma = suma + Text1(A).Text
+        
+        If Text1(A).Text > notaMayor Then
+            notaMayor = Text1(A).Text
+            
+        ElseIf Text1(A).Text < notaMenor Then
+            notaMenor = Text1(A).Text
+            
+            
+        End If
+        
+    Next A
+    
+    promedio = suma / 5
+    
+    Label2.Caption = "la nota mayor: " & notaMayor & vbCrLf & "la nota menor: " & notaMenor & vbCrLf & "el promedio: " & promedio
+    
+
+
+
+
 
 End Sub
 
