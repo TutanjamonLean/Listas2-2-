@@ -11,6 +11,21 @@ Begin VB.Form Form1
    ScaleWidth      =   19725
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
+   Begin VB.CommandButton Command4 
+      Caption         =   "Command4"
+      Height          =   855
+      Left            =   10800
+      TabIndex        =   22
+      Top             =   4200
+      Width           =   2175
+   End
+   Begin VB.ListBox List3 
+      Height          =   1815
+      Left            =   13200
+      TabIndex        =   21
+      Top             =   4200
+      Width           =   8895
+   End
    Begin VB.CommandButton Command3 
       Caption         =   "Command3"
       Height          =   855
@@ -185,6 +200,7 @@ Begin VB.Form Form1
       Left            =   4800
       TabIndex        =   0
       Top             =   2400
+      Visible         =   0   'False
       Width           =   1455
    End
    Begin VB.Label Label2 
@@ -294,55 +310,75 @@ Option Explicit
 Dim notaMayor, notaMenor, suma As Integer
 Dim promedio As Double
 Dim A As Integer
+
 Private Sub Command1_Click()
 '------------------Dar notas-------------------
+
+List1.Clear
+
 If List1.ListCount < 5 Then
 
     For A = 0 To 4
-       
+
+
         If Val(Text1(A).Text) < 0 Or Val(Text1(A).Text) > 10 Then
-            
+
             List1.AddItem "Escribiste mal la nota"
-            
+
         ElseIf Text1(A).Text = "" Then
-            
+
             List1.AddItem "escribi algo bobo"
-            
+
         Else
-            
+
             List1.AddItem Label1(A).Caption & ": " & Text1(A).Text
-               
+
         End If
-        
-    
-        
+
+
+
     Next A
-    
+
 
 End If
-       
+
 
 End Sub
 Private Sub Command2_Click()
 '-------------------------Calcular el promedio-----------------------
-    notaMayor = Text1(0).Text
-    notaMenor = Text1(0).Text
-
+    notaMayor = CInt(Text1(0).Text)
+    notaMenor = CInt(Text1(0).Text)
+    suma = 0
+    promedio = 0
+    
+    
     For A = 0 To 4
     
-        suma = suma + Text1(A).Text
+        suma = suma + Val(Text1(A).Text)
         
-        If Text1(A).Text > notaMayor Then
-            notaMayor = Text1(A).Text
+'        Select Case notaMayor
+'            Case Is > Val(Text1(A).Text)
+'                notaMayor = Val(Text1(A).Text)
+'        End Select
+'
+'        Select Case notaMenor
+'            Case Is < Val(Text1(A).Text)
+'                notaMenor = Val(Text1(A).Text)
+'        End Select
+        
+        If CInt(Text1(A).Text) > notaMayor Then
             
-        ElseIf Text1(A).Text < notaMenor Then
-            notaMenor = Text1(A).Text
-            
-        Else
-            
+            notaMayor = CInt(Text1(A).Text)
         End If
+
+        If CInt(Text1(A).Text) < notaMenor Then
+            
+            notaMenor = CInt(Text1(A).Text)
         
+        End If
+
     Next A
+    
     
     promedio = suma / 5
     
@@ -356,6 +392,8 @@ Private Sub Command2_Click()
 End Sub
 Private Sub Command3_Click()
 Dim nombres(4) As String
+       
+       List2.Clear
        
 If List2.ListCount < 5 Then
        
@@ -380,35 +418,47 @@ End If
 
 End Sub
 
-Private Sub Text1_KeyPress(Index As Integer, KeyAscii As Integer)
+Private Sub Command4_Click()
     
-    If Index >= 0 And Index <= 4 Then
-        If KeyAscii >= 48 And KeyAscii <= 57 Then
-            KeyAscii = KeyAscii
-        ElseIf KeyAscii = 8 Then
-            KeyAscii = KeyAscii
-        Else
-            KeyAscii = 0
-        End If
-    Else
-        
+    If List2.SelCount <> 0 Then
+        List3.AddItem (List2.List(List2.ListIndex))
     End If
     
 End Sub
-Private Sub Text2_KeyPress(Index As Integer, KeyAscii As Integer)
 
-        If Index >= 0 And Index <= 4 Then
-           If KeyAscii >= 65 And KeyAscii <= 90 Or KeyAscii >= 97 And KeyAscii <= 122 Then
-                KeyAscii = KeyAscii
-           ElseIf KeyAscii = 32 Then
-                KeyAscii = KeyAscii
-           ElseIf KeyAscii = 8 Then
-                KeyAscii = KeyAscii
+Private Sub Text1_KeyPress(index As Integer, keyascii As Integer)
+
+    If index >= 0 And index <= 4 Then
+        If keyascii >= 48 And keyascii <= 57 Then
+            keyascii = keyascii
+        ElseIf keyascii = 8 Then
+            keyascii = keyascii
+        Else
+            keyascii = 0
+        End If
+    Else
+
+    End If
+    
+End Sub
+
+Private Sub Text2_KeyPress(index As Integer, keyascii As Integer)
+
+        If index >= 0 And index <= 4 Then
+           If keyascii >= 65 And keyascii <= 90 Or keyascii >= 97 And keyascii <= 122 Then
+                keyascii = keyascii
+           ElseIf keyascii = 32 Then
+                keyascii = keyascii
+           ElseIf keyascii = 8 Then
+                keyascii = keyascii
            Else
-                KeyAscii = 0
+                keyascii = 0
                 
            End If
         End If
     
 
 End Sub
+
+'-------------------------------------------------------------------------SUBRUTINAS DOWNS---------------------------------------------------------------------
+
