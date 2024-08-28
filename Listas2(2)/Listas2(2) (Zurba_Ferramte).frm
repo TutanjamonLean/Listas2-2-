@@ -11,12 +11,29 @@ Begin VB.Form Form1
    ScaleWidth      =   19725
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
+   Begin VB.CommandButton Command3 
+      Caption         =   "Command3"
+      Height          =   855
+      Left            =   4200
+      TabIndex        =   20
+      Top             =   7680
+      Width           =   2055
+   End
+   Begin VB.ListBox List2 
+      Height          =   2400
+      ItemData        =   "Listas2(2) (Zurba_Ferramte).frx":0000
+      Left            =   2880
+      List            =   "Listas2(2) (Zurba_Ferramte).frx":0002
+      TabIndex        =   19
+      Top             =   4920
+      Width           =   5175
+   End
    Begin VB.TextBox Text2 
       Height          =   735
       Index           =   4
       Left            =   480
       TabIndex        =   18
-      Top             =   5160
+      Top             =   7680
       Width           =   1935
    End
    Begin VB.TextBox Text2 
@@ -24,7 +41,7 @@ Begin VB.Form Form1
       Index           =   3
       Left            =   480
       TabIndex        =   17
-      Top             =   6000
+      Top             =   6840
       Width           =   1935
    End
    Begin VB.TextBox Text2 
@@ -32,7 +49,7 @@ Begin VB.Form Form1
       Index           =   2
       Left            =   480
       TabIndex        =   16
-      Top             =   6840
+      Top             =   6000
       Width           =   1935
    End
    Begin VB.TextBox Text2 
@@ -40,7 +57,7 @@ Begin VB.Form Form1
       Index           =   1
       Left            =   480
       TabIndex        =   15
-      Top             =   7680
+      Top             =   5160
       Width           =   1935
    End
    Begin VB.TextBox Text2 
@@ -155,9 +172,9 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   1860
-      ItemData        =   "Listas2(2) (Zurba_Ferramte).frx":0000
+      ItemData        =   "Listas2(2) (Zurba_Ferramte).frx":0004
       Left            =   4440
-      List            =   "Listas2(2) (Zurba_Ferramte).frx":0002
+      List            =   "Listas2(2) (Zurba_Ferramte).frx":0006
       TabIndex        =   1
       Top             =   240
       Width           =   6495
@@ -300,6 +317,7 @@ If List1.ListCount < 5 Then
     
         
     Next A
+    
 
 End If
        
@@ -320,6 +338,7 @@ Private Sub Command2_Click()
         ElseIf Text1(A).Text < notaMenor Then
             notaMenor = Text1(A).Text
             
+        Else
             
         End If
         
@@ -333,6 +352,31 @@ Private Sub Command2_Click()
 
 
 
+
+End Sub
+Private Sub Command3_Click()
+Dim nombres(4) As String
+       
+If List2.ListCount < 5 Then
+       
+       For A = 0 To 4
+             
+             nombres(A) = Text2(A).Text
+             
+            If nombres(A) = "" Then
+            
+                List2.AddItem "escribi algo tonto"
+                
+            Else
+                
+                List2.AddItem "nombre: " & nombres(A)
+            
+
+            End If
+        
+       Next A
+       
+End If
 
 End Sub
 
@@ -350,4 +394,21 @@ Private Sub Text1_KeyPress(Index As Integer, KeyAscii As Integer)
         
     End If
     
+End Sub
+Private Sub Text2_KeyPress(Index As Integer, KeyAscii As Integer)
+
+        If Index >= 0 And Index <= 4 Then
+           If KeyAscii >= 65 And KeyAscii <= 90 Or KeyAscii >= 97 And KeyAscii <= 122 Then
+                KeyAscii = KeyAscii
+           ElseIf KeyAscii = 32 Then
+                KeyAscii = KeyAscii
+           ElseIf KeyAscii = 8 Then
+                KeyAscii = KeyAscii
+           Else
+                KeyAscii = 0
+                
+           End If
+        End If
+    
+
 End Sub
