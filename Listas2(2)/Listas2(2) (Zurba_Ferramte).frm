@@ -11,8 +11,47 @@ Begin VB.Form Form1
    ScaleWidth      =   19725
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
+   Begin VB.CommandButton Command7 
+      Caption         =   "Command7"
+      Height          =   735
+      Left            =   10920
+      TabIndex        =   27
+      Top             =   7680
+      Width           =   3015
+   End
+   Begin VB.TextBox Text4 
+      Height          =   975
+      Left            =   10920
+      TabIndex        =   26
+      Top             =   6480
+      Width           =   3015
+   End
+   Begin VB.CommandButton Command6 
+      Caption         =   "Command6"
+      Height          =   615
+      Left            =   20760
+      TabIndex        =   25
+      Top             =   720
+      Width           =   1455
+   End
+   Begin VB.TextBox Text3 
+      Height          =   615
+      Left            =   18960
+      TabIndex        =   24
+      Top             =   720
+      Width           =   1215
+   End
    Begin VB.CommandButton Command5 
-      Caption         =   "Command5"
+      Caption         =   "Modificar"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
       Left            =   10800
       TabIndex        =   23
@@ -52,7 +91,7 @@ Begin VB.Form Form1
       List            =   "Listas2(2) (Zurba_Ferramte).frx":0002
       TabIndex        =   21
       Top             =   4200
-      Width           =   8895
+      Width           =   8655
    End
    Begin VB.CommandButton Command3 
       Caption         =   "Introducir nombre"
@@ -176,6 +215,15 @@ Begin VB.Form Form1
    End
    Begin VB.CommandButton Command2 
       Caption         =   "Calcular Promedio"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
       Left            =   6720
       TabIndex        =   12
@@ -291,8 +339,14 @@ Begin VB.Form Form1
       Left            =   4800
       TabIndex        =   0
       Top             =   2400
-      Visible         =   0   'False
       Width           =   1455
+   End
+   Begin VB.Label Label3 
+      Height          =   2055
+      Left            =   15960
+      TabIndex        =   28
+      Top             =   6600
+      Width           =   3135
    End
    Begin VB.Label Label2 
       BeginProperty Font 
@@ -410,6 +464,7 @@ Option Explicit
 Dim notaMayor, notaMenor, suma As Integer
 Dim promedio As Double
 Dim A As Integer
+Dim coincidencias(7) As Integer
 
 Private Sub Command1_Click()
 '------------------Dar notas-------------------
@@ -524,6 +579,31 @@ Private Sub Command5_Click()
     End If
 End Sub
 
+Private Sub Command6_Click()
+    If List3.SelCount > 0 Then
+        List3.List(List3.ListIndex) = (List2.List(List2.ListIndex)) & " - " & Text3.Text
+    End If
+End Sub
+
+Private Sub Command7_Click()
+'Dim subA, subB As Integer
+'
+'    For subA = 0 To (List3.ListCount - 1)
+'
+'        For subB = 9 To Len(List3.List(List3.ListIndex))
+'
+'            If Mid(List3.List(List3.ListIndex, Len(Text4.Text), Len(Text4.Text))) = Text4.Text Then
+'
+'
+'
+'            End If
+'
+'        Next subB
+'
+'    Next subA
+    
+End Sub
+
 Private Sub Text1_KeyPress(index As Integer, keyascii As Integer)
 
     If index >= 0 And index <= 4 Then
@@ -560,3 +640,24 @@ End Sub
 
 '-------------------------------------------------------------------------SUBRUTINAS DOWNS---------------------------------------------------------------------
 
+Private Sub Text4_Change()
+Dim subA, subB As Integer
+    
+    For subA = 0 To (List3.ListCount - 1)
+        
+        For subB = 9 To Len(List3.List(List3.ListIndex))
+            
+            If Mid(List3.List(List3.ListIndex), Len(Text4.Text), Len(Text4.Text)) = Text4.Text Then
+                
+                Label3.BackColor = RGB(255, 255, 255)
+                
+            Else
+                
+                Label3.BackColor = &H8000000F
+                
+            End If
+            
+        Next subB
+        
+    Next subA
+End Sub
