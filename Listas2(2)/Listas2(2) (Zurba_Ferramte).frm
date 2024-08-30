@@ -11,8 +11,25 @@ Begin VB.Form Form1
    ScaleWidth      =   19725
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
+   Begin VB.CommandButton Command5 
+      Caption         =   "Command5"
+      Height          =   735
+      Left            =   10800
+      TabIndex        =   23
+      Top             =   5160
+      Width           =   2175
+   End
    Begin VB.CommandButton Command4 
-      Caption         =   "Command4"
+      Caption         =   "Dar notas"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   855
       Left            =   10800
       TabIndex        =   22
@@ -20,68 +37,142 @@ Begin VB.Form Form1
       Width           =   2175
    End
    Begin VB.ListBox List3 
-      Height          =   1815
-      Left            =   13200
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1500
+      ItemData        =   "Listas2(2) (Zurba_Ferramte).frx":0000
+      Left            =   13080
+      List            =   "Listas2(2) (Zurba_Ferramte).frx":0002
       TabIndex        =   21
       Top             =   4200
       Width           =   8895
    End
    Begin VB.CommandButton Command3 
-      Caption         =   "Command3"
+      Caption         =   "Introducir nombre"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   855
-      Left            =   4200
+      Left            =   5520
       TabIndex        =   20
-      Top             =   7680
+      Top             =   6960
       Width           =   2055
    End
    Begin VB.ListBox List2 
-      Height          =   2400
-      ItemData        =   "Listas2(2) (Zurba_Ferramte).frx":0000
-      Left            =   2880
-      List            =   "Listas2(2) (Zurba_Ferramte).frx":0002
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   2220
+      ItemData        =   "Listas2(2) (Zurba_Ferramte).frx":0004
+      Left            =   3960
+      List            =   "Listas2(2) (Zurba_Ferramte).frx":0006
       TabIndex        =   19
-      Top             =   4920
-      Width           =   5175
+      Top             =   4560
+      Width           =   5895
    End
    Begin VB.TextBox Text2 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
       Index           =   4
       Left            =   480
       TabIndex        =   18
       Top             =   7680
-      Width           =   1935
+      Width           =   3135
    End
    Begin VB.TextBox Text2 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
       Index           =   3
       Left            =   480
       TabIndex        =   17
       Top             =   6840
-      Width           =   1935
+      Width           =   3135
    End
    Begin VB.TextBox Text2 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
       Index           =   2
       Left            =   480
       TabIndex        =   16
       Top             =   6000
-      Width           =   1935
+      Width           =   3135
    End
    Begin VB.TextBox Text2 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
       Index           =   1
       Left            =   480
       TabIndex        =   15
       Top             =   5160
-      Width           =   1935
+      Width           =   3135
    End
    Begin VB.TextBox Text2 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
       Index           =   0
       Left            =   480
       TabIndex        =   14
       Top             =   4320
-      Width           =   1935
+      Width           =   3135
    End
    Begin VB.CommandButton Command2 
       Caption         =   "Calcular Promedio"
@@ -187,9 +278,9 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   1860
-      ItemData        =   "Listas2(2) (Zurba_Ferramte).frx":0004
+      ItemData        =   "Listas2(2) (Zurba_Ferramte).frx":0008
       Left            =   4440
-      List            =   "Listas2(2) (Zurba_Ferramte).frx":0006
+      List            =   "Listas2(2) (Zurba_Ferramte).frx":000A
       TabIndex        =   1
       Top             =   240
       Width           =   6495
@@ -204,11 +295,20 @@ Begin VB.Form Form1
       Width           =   1455
    End
    Begin VB.Label Label2 
-      Height          =   975
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   13.5
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   1335
       Left            =   11160
       TabIndex        =   13
       Top             =   240
-      Width           =   3015
+      Width           =   3615
    End
    Begin VB.Label Label1 
       Caption         =   "Historia"
@@ -356,16 +456,6 @@ Private Sub Command2_Click()
     
         suma = suma + Val(Text1(A).Text)
         
-'        Select Case notaMayor
-'            Case Is > Val(Text1(A).Text)
-'                notaMayor = Val(Text1(A).Text)
-'        End Select
-'
-'        Select Case notaMenor
-'            Case Is < Val(Text1(A).Text)
-'                notaMenor = Val(Text1(A).Text)
-'        End Select
-        
         If CInt(Text1(A).Text) > notaMayor Then
             
             notaMayor = CInt(Text1(A).Text)
@@ -421,9 +511,17 @@ End Sub
 Private Sub Command4_Click()
     
     If List2.SelCount <> 0 Then
-        List3.AddItem (List2.List(List2.ListIndex))
+        List3.AddItem (List2.List(List2.ListIndex)) & ", obtuvo la nota de: " & promedio
+    Else
+        List3.AddItem "no hay alumno pibe"
     End If
     
+End Sub
+
+Private Sub Command5_Click()
+    If List3.SelCount > 0 Then
+        List3.List(List3.ListIndex) = (List2.List(List2.ListIndex)) & " - " & promedio
+    End If
 End Sub
 
 Private Sub Text1_KeyPress(index As Integer, keyascii As Integer)
