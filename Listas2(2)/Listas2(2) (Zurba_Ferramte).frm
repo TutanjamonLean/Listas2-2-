@@ -12,34 +12,52 @@ Begin VB.Form Form1
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
    Begin VB.CommandButton Command7 
-      Caption         =   "Command7"
-      Height          =   735
-      Left            =   10920
+      Caption         =   "Buscar Alumno"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   855
+      Left            =   12480
       TabIndex        =   27
-      Top             =   7680
-      Width           =   3015
+      Top             =   8160
+      Width           =   4095
    End
    Begin VB.TextBox Text4 
       Height          =   975
-      Left            =   10920
+      Left            =   12480
       TabIndex        =   26
-      Top             =   6480
-      Width           =   3015
+      Top             =   6960
+      Width           =   4095
    End
    Begin VB.CommandButton Command6 
-      Caption         =   "Command6"
-      Height          =   615
-      Left            =   20760
+      Caption         =   "Editar Nota"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   855
+      Left            =   21240
       TabIndex        =   25
-      Top             =   720
+      Top             =   5520
       Width           =   1455
    End
    Begin VB.TextBox Text3 
-      Height          =   615
-      Left            =   18960
+      Height          =   855
+      Left            =   21240
       TabIndex        =   24
-      Top             =   720
-      Width           =   1215
+      Top             =   4560
+      Width           =   1455
    End
    Begin VB.CommandButton Command5 
       Caption         =   "Modificar"
@@ -53,9 +71,9 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   10800
+      Left            =   10200
       TabIndex        =   23
-      Top             =   5160
+      Top             =   5640
       Width           =   2175
    End
    Begin VB.CommandButton Command4 
@@ -70,9 +88,9 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   855
-      Left            =   10800
+      Left            =   10200
       TabIndex        =   22
-      Top             =   4200
+      Top             =   4560
       Width           =   2175
    End
    Begin VB.ListBox List3 
@@ -85,12 +103,12 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1500
+      Height          =   1860
       ItemData        =   "Listas2(2) (Zurba_Ferramte).frx":0000
-      Left            =   13080
+      Left            =   12480
       List            =   "Listas2(2) (Zurba_Ferramte).frx":0002
       TabIndex        =   21
-      Top             =   4200
+      Top             =   4560
       Width           =   8655
    End
    Begin VB.CommandButton Command3 
@@ -105,10 +123,10 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   855
-      Left            =   5520
+      Left            =   480
       TabIndex        =   20
-      Top             =   6960
-      Width           =   2055
+      Top             =   8520
+      Width           =   3135
    End
    Begin VB.ListBox List2 
       BeginProperty Font 
@@ -122,10 +140,10 @@ Begin VB.Form Form1
       EndProperty
       Height          =   2220
       ItemData        =   "Listas2(2) (Zurba_Ferramte).frx":0004
-      Left            =   3960
+      Left            =   3840
       List            =   "Listas2(2) (Zurba_Ferramte).frx":0006
       TabIndex        =   19
-      Top             =   4560
+      Top             =   4320
       Width           =   5895
    End
    Begin VB.TextBox Text2 
@@ -142,6 +160,7 @@ Begin VB.Form Form1
       Index           =   4
       Left            =   480
       TabIndex        =   18
+      Text            =   "lol"
       Top             =   7680
       Width           =   3135
    End
@@ -159,6 +178,7 @@ Begin VB.Form Form1
       Index           =   3
       Left            =   480
       TabIndex        =   17
+      Text            =   "al"
       Top             =   6840
       Width           =   3135
    End
@@ -176,6 +196,7 @@ Begin VB.Form Form1
       Index           =   2
       Left            =   480
       TabIndex        =   16
+      Text            =   "juega"
       Top             =   6000
       Width           =   3135
    End
@@ -193,6 +214,7 @@ Begin VB.Form Form1
       Index           =   1
       Left            =   480
       TabIndex        =   15
+      Text            =   "mama"
       Top             =   5160
       Width           =   3135
    End
@@ -210,6 +232,7 @@ Begin VB.Form Form1
       Index           =   0
       Left            =   480
       TabIndex        =   14
+      Text            =   "tu"
       Top             =   4320
       Width           =   3135
    End
@@ -225,10 +248,10 @@ Begin VB.Form Form1
          Strikethrough   =   0   'False
       EndProperty
       Height          =   735
-      Left            =   6720
+      Left            =   8640
       TabIndex        =   12
-      Top             =   2400
-      Width           =   1335
+      Top             =   2160
+      Width           =   2295
    End
    Begin VB.TextBox Text1 
       BeginProperty Font 
@@ -244,6 +267,7 @@ Begin VB.Form Form1
       Index           =   4
       Left            =   3240
       TabIndex        =   6
+      Text            =   "7"
       Top             =   3000
       Width           =   735
    End
@@ -261,6 +285,7 @@ Begin VB.Form Form1
       Index           =   3
       Left            =   3240
       TabIndex        =   5
+      Text            =   "8"
       Top             =   2280
       Width           =   735
    End
@@ -278,6 +303,7 @@ Begin VB.Form Form1
       Index           =   2
       Left            =   3240
       TabIndex        =   4
+      Text            =   "7"
       Top             =   1560
       Width           =   735
    End
@@ -295,6 +321,7 @@ Begin VB.Form Form1
       Index           =   1
       Left            =   3240
       TabIndex        =   3
+      Text            =   "8"
       Top             =   840
       Width           =   735
    End
@@ -312,6 +339,7 @@ Begin VB.Form Form1
       Index           =   0
       Left            =   3240
       TabIndex        =   2
+      Text            =   "7"
       Top             =   120
       Width           =   735
    End
@@ -335,18 +363,20 @@ Begin VB.Form Form1
    End
    Begin VB.CommandButton Command1 
       Caption         =   "Dar notas"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   735
-      Left            =   4800
+      Left            =   4440
       TabIndex        =   0
-      Top             =   2400
-      Width           =   1455
-   End
-   Begin VB.Label Label3 
-      Height          =   2055
-      Left            =   15960
-      TabIndex        =   28
-      Top             =   6600
-      Width           =   3135
+      Top             =   2160
+      Width           =   2055
    End
    Begin VB.Label Label2 
       BeginProperty Font 
@@ -358,7 +388,7 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1335
+      Height          =   1815
       Left            =   11160
       TabIndex        =   13
       Top             =   240
@@ -375,11 +405,11 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
+      Height          =   615
       Index           =   4
       Left            =   240
       TabIndex        =   11
-      Top             =   2520
+      Top             =   3000
       Width           =   2775
    End
    Begin VB.Label Label1 
@@ -393,11 +423,11 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
+      Height          =   615
       Index           =   3
       Left            =   240
       TabIndex        =   10
-      Top             =   1920
+      Top             =   2280
       Width           =   2775
    End
    Begin VB.Label Label1 
@@ -411,11 +441,11 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
+      Height          =   615
       Index           =   2
       Left            =   240
       TabIndex        =   9
-      Top             =   1320
+      Top             =   1560
       Width           =   2775
    End
    Begin VB.Label Label1 
@@ -429,11 +459,11 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
+      Height          =   615
       Index           =   1
       Left            =   240
       TabIndex        =   8
-      Top             =   720
+      Top             =   840
       Width           =   2775
    End
    Begin VB.Label Label1 
@@ -447,7 +477,7 @@ Begin VB.Form Form1
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   495
+      Height          =   615
       Index           =   0
       Left            =   240
       TabIndex        =   7
@@ -463,7 +493,9 @@ Attribute VB_Exposed = False
 Option Explicit
 Dim notaMayor, notaMenor, suma As Integer
 Dim promedio As Double
-Dim A As Integer
+Dim A, subA, subB As Integer
+Dim BuscarAlumno As String
+Dim caract As Integer
 Dim coincidencias(7) As Integer
 
 Private Sub Command1_Click()
@@ -586,21 +618,22 @@ Private Sub Command6_Click()
 End Sub
 
 Private Sub Command7_Click()
-'Dim subA, subB As Integer
-'
-'    For subA = 0 To (List3.ListCount - 1)
-'
-'        For subB = 9 To Len(List3.List(List3.ListIndex))
-'
-'            If Mid(List3.List(List3.ListIndex, Len(Text4.Text), Len(Text4.Text))) = Text4.Text Then
-'
-'
-'
-'            End If
-'
-'        Next subB
-'
-'    Next subA
+    
+    For subA = 0 To List3.SelCount
+            
+        caract = caract & Mid(List3.List(subA), subA + 9, 1)
+        
+        If caract = Text4.Text Then
+            
+            List3.Selected(subA) = True
+            
+        Else
+        
+            List3.Selected(subA) = False
+            
+        End If
+        
+    Next subA
     
 End Sub
 
@@ -637,27 +670,8 @@ Private Sub Text2_KeyPress(index As Integer, keyascii As Integer)
     
 
 End Sub
-
-'-------------------------------------------------------------------------SUBRUTINAS DOWNS---------------------------------------------------------------------
-
 Private Sub Text4_Change()
-Dim subA, subB As Integer
     
-    For subA = 0 To (List3.ListCount - 1)
-        
-        For subB = 9 To Len(List3.List(List3.ListIndex))
-            
-            If Mid(List3.List(List3.ListIndex), Len(Text4.Text), Len(Text4.Text)) = Text4.Text Then
-                
-                Label3.BackColor = RGB(255, 255, 255)
-                
-            Else
-                
-                Label3.BackColor = &H8000000F
-                
-            End If
-            
-        Next subB
-        
-    Next subA
+    BuscarAlumno = Text4.Text
+    
 End Sub
