@@ -160,7 +160,6 @@ Begin VB.Form Form1
       Index           =   4
       Left            =   480
       TabIndex        =   18
-      Text            =   "lol"
       Top             =   7680
       Width           =   3135
    End
@@ -178,7 +177,6 @@ Begin VB.Form Form1
       Index           =   3
       Left            =   480
       TabIndex        =   17
-      Text            =   "al"
       Top             =   6840
       Width           =   3135
    End
@@ -196,7 +194,6 @@ Begin VB.Form Form1
       Index           =   2
       Left            =   480
       TabIndex        =   16
-      Text            =   "juega"
       Top             =   6000
       Width           =   3135
    End
@@ -214,7 +211,6 @@ Begin VB.Form Form1
       Index           =   1
       Left            =   480
       TabIndex        =   15
-      Text            =   "mama"
       Top             =   5160
       Width           =   3135
    End
@@ -232,7 +228,6 @@ Begin VB.Form Form1
       Index           =   0
       Left            =   480
       TabIndex        =   14
-      Text            =   "tu"
       Top             =   4320
       Width           =   3135
    End
@@ -267,7 +262,6 @@ Begin VB.Form Form1
       Index           =   4
       Left            =   3240
       TabIndex        =   6
-      Text            =   "7"
       Top             =   3000
       Width           =   735
    End
@@ -285,7 +279,6 @@ Begin VB.Form Form1
       Index           =   3
       Left            =   3240
       TabIndex        =   5
-      Text            =   "8"
       Top             =   2280
       Width           =   735
    End
@@ -303,7 +296,6 @@ Begin VB.Form Form1
       Index           =   2
       Left            =   3240
       TabIndex        =   4
-      Text            =   "7"
       Top             =   1560
       Width           =   735
    End
@@ -321,7 +313,6 @@ Begin VB.Form Form1
       Index           =   1
       Left            =   3240
       TabIndex        =   3
-      Text            =   "8"
       Top             =   840
       Width           =   735
    End
@@ -339,7 +330,6 @@ Begin VB.Form Form1
       Index           =   0
       Left            =   3240
       TabIndex        =   2
-      Text            =   "7"
       Top             =   120
       Width           =   735
    End
@@ -496,6 +486,7 @@ Dim promedio As Double
 Dim A, subA, subB As Integer
 Dim BuscarAlumno As String
 Dim caract As Integer
+Dim alt As Boolean
 Dim coincidencias(7) As Integer
 
 Private Sub Command1_Click()
@@ -602,7 +593,7 @@ Private Sub Command4_Click()
     Else
         List3.AddItem "no hay alumno pibe"
     End If
-    
+
 End Sub
 
 Private Sub Command5_Click()
@@ -616,25 +607,24 @@ Private Sub Command6_Click()
         List3.List(List3.ListIndex) = (List2.List(List2.ListIndex)) & " - " & Text3.Text
     End If
 End Sub
-
 Private Sub Command7_Click()
     
-    For subA = 0 To List3.SelCount
-            
-        caract = caract & Mid(List3.List(subA), subA + 9, 1)
-        
-        If caract = Text4.Text Then
-            
-            List3.Selected(subA) = True
-            
-        Else
-        
-            List3.Selected(subA) = False
-            
-        End If
-        
-    Next subA
+    alt = False
     
+    For subA = 0 To List3.ListCount + 9
+         
+         If Text4.Text = Mid(List3.List(subA), 9, Len(Text4.Text)) Then
+            caract = (subA)
+            alt = True
+         End If
+   Next subA
+    
+    If alt Then
+        List3.Selected(caract) = True
+        MsgBox "alumno encontrado"
+    Else
+        MsgBox "no encuentro al alumno"
+    End If
 End Sub
 
 Private Sub Text1_KeyPress(index As Integer, keyascii As Integer)
